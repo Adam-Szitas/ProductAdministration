@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->count(1)->create();
 
         Category::factory()->count(10)->create()->each(function($category){
-            $category->products()->save(Product::factory(Product::class)->count(5)->create());
+            $category->products()->saveMany(Product::factory(Product::class)->count(5)->create());
         });
 
         // \App\Models\User::factory(10)->create();
