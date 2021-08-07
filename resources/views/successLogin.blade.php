@@ -19,9 +19,17 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            table * {
+                border: 1px solid lightgrey;
+                padding: 5px;
+            }
         </style>
     </head>
     <body class="antialiased">
+
+        @include('navbar')
+
+
         <div class="container box">
 
             <h3 class="center">
@@ -29,13 +37,27 @@
             </h3>
 
             @if(isset(Auth::user()->name))
-
-                <div class="alert alert-danger success-block">
-                    <strong>Welcome {{ Auth::user()->name }}</strong>
-                    <br>
-                </div>
                 <div class="container list">
-                    {{ App\Models\Product::select("*")->get() }}
+                    <table>
+                        <tr>
+                            <th>Category name</th>
+                            <th>Product name</th>
+                            <th>Note</th>
+                            <th>Product code</th>
+                            <th>Created at</th>
+                        </tr>
+                    @foreach ($list as $elem)
+                        <tr>
+                            <td>{{ $elem->Cname }}</td>
+                            <td>{{ $elem->name }}</td>
+                            <td>{{ $elem->note }}</td>
+                            <td>{{ $elem->unique_hash }}</td>
+                            <td>{{ $elem->created_at }}</td>
+                        </tr>
+                    @endforeach
+
+                </table>
+
                 </div>
             @endif
 
