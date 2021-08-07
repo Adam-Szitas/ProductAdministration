@@ -65,3 +65,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Steps
 1. creating Migration (error --> Syntax error or access violation: 1071 Specified key was too long; max key length is 1000 bytes" --> so I had to modify the AppServiceProvider)
+2. applying the migrations
+3. creating seeder and factories
+4. using db:seed
