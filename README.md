@@ -61,3 +61,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Steps
+1. creating Migration (error --> Syntax error or access violation: 1071 Specified key was too long; max key length is 1000 bytes" --> so I had to modify the AppServiceProvider)
