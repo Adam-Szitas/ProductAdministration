@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
-        Factory(App\User::class, 5)->
 
 
         // \App\Models\User::factory(10)->create();
