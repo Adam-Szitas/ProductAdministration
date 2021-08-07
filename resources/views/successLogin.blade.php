@@ -34,6 +34,9 @@
                     <strong>Welcome {{ Auth::user()->name }}</strong>
                     <br>
                 </div>
+                <div class="container list">
+                    {{ App\Models\Product::select("*")->get() }}
+                </div>
             @endif
 
         </div>

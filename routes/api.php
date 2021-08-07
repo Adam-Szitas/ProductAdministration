@@ -23,4 +23,4 @@ use App\Http\Controllers\UserController;
 // });
 
 
-Route::post('user', 'App\Http\Controllers\UserController@me');
+// Route::get('user', 'App\Http\Controllers\UserController@successLogin');
