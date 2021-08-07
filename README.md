@@ -68,3 +68,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 2. applying the migrations
 3. creating seeder and factories
 4. using db:seed
+5. creating usercontroller
+6. testing the api with Thunder Client || PostMan
+7. creating a login page and trying to deal with errors

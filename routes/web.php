@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/main', 'App\Http\Controllers\UserController@index');
+Route::post('/main/checklogin', 'App\Http\Controllers\UserController@checkLogin');
+Route::get('/main/successLogin', 'App\Http\Controller\\UserController@successLogin');

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Login</title>
+        <title>Successful login</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,44 +24,18 @@
     <body class="antialiased">
         <div class="container box">
 
-            @if($message = Session::get('error'))
-                <div class="alert alert-danger alert-block">
-                    <button type="button" class="close" data-dismiss="alert">
-                        x
-                    </button>
-                    <strong>{{ $message }}</strong>
-                </div>
-            @endif
-
-            @if (count($errors) > 0)
-
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-
-            @endif
-
             <h3 class="center">
-                Login
+                Products and Categories
             </h3>
-            <form method="post" action="{{ url('/main/checklogin') }}">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <label>Enter Name</label>
-                    <input type="text" name="name" class="form-control"/>
+
+            @if(isset(Auth::user()->name))
+
+                <div class="alert alert-danger success-block">
+                    <strong>Welcome {{ Auth::user()->name }}</strong>
+                    <br>
                 </div>
-                <div class="form-group">
-                    <label>Enter password</label>
-                    <input type="password" name="password" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="submit" name="login" class="btn btn-primary" value="Login"/>
-                </div>
-            </form>
+            @endif
+
         </div>
     </body>
 </html>
