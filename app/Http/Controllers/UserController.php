@@ -7,6 +7,9 @@ use Validator;
 use Auth;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
 class UserController extends Controller
 {
 
@@ -30,6 +33,32 @@ class UserController extends Controller
         }else{
             return back()->with('error', 'Wrong Login Details');
         }
+    }
+
+    public function insertProduct(Request $request){
+        // $this->validate($request,[
+        //     'name'      => 'required',
+        //     'note'  => 'required'
+        // ]);
+
+
+            $name = $request->get('name') ?: $this->faker->name();
+            $note = $request->get('note') ?: Str::random(50);
+            $hash = Str::random(16);
+
+        $insert = DB::table('products')
+            ->insert(array(
+                'category_id' => \rand(1,10),
+                'name' => $name,
+                'note' => $note,
+                'unique_hash' => $hash
+            ));
+
+
+        if($insert){
+            return $this->successLogin();
+        }
+
     }
 
     function successLogin(){

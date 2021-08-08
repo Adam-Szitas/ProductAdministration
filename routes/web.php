@@ -20,5 +20,6 @@ Route::get('/', function () {
 Route::get('/main', 'App\Http\Controllers\UserController@index');
 Route::post('/main/checklogin', 'App\Http\Controllers\UserController@checkLogin');
 Route::get('/main/successLogin', 'App\Http\Controllers\UserController@successLogin');
-Route::get('/main/add/product', 'App\Http\Controllers\UserController@addProduct');
 
+Route::get('/main/add/product', 'App\Http\Controllers\UserController@addProduct');
+Route::post('/main/add/insertProduct', 'App\Http\Controllers\UserController@insertProduct');
