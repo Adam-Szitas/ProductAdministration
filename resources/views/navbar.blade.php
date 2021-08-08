@@ -37,13 +37,13 @@
     <div class="navbar">
         <div class="left">
             @if(isset(Auth::user()->name))
-                <strong>Hello {{ Auth::user()->name }}</strong>
+                <strong>{{ __('lang.hello') }} {{ Auth::user()->name }}</strong>
             @endif
         </div>
         <div class="right">
             @if(isset(Auth::user()->name))
-                <a href="{{ url('/main/successLogin') }}">Home</a>
-                <a href="{{ url('/main/add/product') }}"> Add new product</a>
+                <a href="{{ url('/main/successLogin') }}">{{ __('lang.home') }}</a>
+                <a href="{{ url('/main/add/product') }}">{{ __('lang.add_new_product') }}</a>
             @endif
         </div>
     </div>

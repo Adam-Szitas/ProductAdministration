@@ -33,18 +33,18 @@
         <div class="container box">
 
             <h3 class="center">
-                Products and Categories
+                {{ __('lang.products') }} {{ __('lang.and') }} {{ __('lang.categories') }}
             </h3>
 
             @if(isset(Auth::user()->name))
                 <div class="container list">
                     <table>
                         <tr>
-                            <th>Category name</th>
-                            <th>Product name</th>
-                            <th>Note</th>
-                            <th>Product code</th>
-                            <th>Created at</th>
+                            <th>{{ __('lang.category_name') }}</th>
+                            <th>{{ __('lang.product_name') }}</th>
+                            <th>{{ __('lang.note') }}</th>
+                            <th>{{ __('lang.product_code') }}</th>
+                            <th>{{ __('lang.created_at') }}</th>
                         </tr>
                     @foreach ($list as $elem)
                         <tr>

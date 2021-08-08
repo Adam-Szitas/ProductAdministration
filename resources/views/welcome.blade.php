@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Login</title>
+        <title>{{ __('lang.login') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -46,20 +46,20 @@
             @endif
 
             <h3 class="center">
-                Login
+                {{ __('lang.login') }}
             </h3>
             <form method="post" action="{{ url('/main/checklogin') }}">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label>Enter Name</label>
+                    <label>{{ __('lang.user_name') }}</label>
                     <input type="text" name="name" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label>Enter password</label>
+                    <label>{{ __('lang.password') }}</label>
                     <input type="password" name="password" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="login" class="btn btn-primary" value="Login"/>
+                    <input type="submit" name="login" class="btn btn-primary" value="{{ __('lang.login') }}"/>
                 </div>
             </form>
         </div>

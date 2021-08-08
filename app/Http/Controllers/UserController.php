@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 
 class UserController extends Controller
@@ -18,6 +19,7 @@ class UserController extends Controller
     }
 
     public function checkLogin(Request $request){
+        App::setlocale(\session('lang'));
         $this->validate($request,[
             'name' => 'required',
             'password' => 'required|min:3'
@@ -36,6 +38,9 @@ class UserController extends Controller
     }
 
     public function insertProduct(Request $request){
+
+        App::setlocale(\session('lang'));
+
         // $this->validate($request,[
         //     'name'      => 'required',
         //     'note'  => 'required'
@@ -62,6 +67,7 @@ class UserController extends Controller
     }
 
     function successLogin(){
+        App::setlocale(\session('lang'));
 
         $Categories = DB::table('categories')
         ->join('products', 'categories.id', '=', 'products.category_id')
@@ -74,9 +80,8 @@ class UserController extends Controller
 
     //new product
     function addProduct(){
+        App::setlocale(\session('lang'));
         return view('newProduct');
     }
-
-
     //
 }
